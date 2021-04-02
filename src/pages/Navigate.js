@@ -41,6 +41,13 @@ const Navigate = ({ history }) => {
 
         ) }
 
+        { isAuthenticated() && isAuthenticated().user.role === 1 && (
+          <li className="nav-item">
+            <Link className="nav-link" style= {isActive(history, '/request/training')} to="/request/training">Create Datasets</Link>
+          </li>
+
+        ) }
+
         { !isAuthenticated() && (
           <Fragment>
             <li className="nav-item">

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Layout from './Layout';
 import { getBraintreeClientToken, processPayment } from '../apis';
 import {isAuthenticated} from '../authBE';
 import DropIn from "braintree-web-drop-in-react";

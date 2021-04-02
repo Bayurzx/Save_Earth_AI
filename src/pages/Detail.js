@@ -17,6 +17,7 @@ const Detail = (props) => {
     created_at: "",
     donated: "",
     images: "",
+    imageUpload: "",
     coord: {"coordinates":[6.4474,4.3903],"type":"Point"},
     button_visible: true,
     endanger: "",
@@ -44,6 +45,7 @@ const Detail = (props) => {
         endanger: response.data.endanger,
         ofClass: response.data.ofClass,
         images: response.data.images,
+        imageUpload: response.data.imageUpload,
         coord: response.data.coord,
 
       })

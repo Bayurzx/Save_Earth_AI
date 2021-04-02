@@ -2,10 +2,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Layout from './Layout';
 import { isAuthenticated } from '../authBE';
-import { Link } from 'react-router-dom';
+import MyButton from './MyButton';
 
-const Upload = () => {
-  const { user , token } = isAuthenticated();
+import uploadFileToBlob, { predictYourImage, predictYourImageTwo } from '../BlobStorageAndAI';
+const storageAccountName = process.env.REACT_APP_STORAGE_RESOURCE_NAME || ""; // Fill string with your Storage resource name
+
+const Upload = (props) => {
+  const { user } = isAuthenticated();
 
   const [values, setValues] = useState({
     name: "",
@@ -18,6 +21,7 @@ const Upload = () => {
     created_at: "",
     donated: "",
     photo: "",
+    imageUpload: "",
     coord: "",
     button_visible: true,
     endanger: "",
@@ -27,6 +31,9 @@ const Upload = () => {
     createdProduct: "",
     redirectToProfile: false
   })
+
+  // setting state for file upload
+  const [fileSelected, setFileSelected] = useState(null);
 
   const {
     name,
@@ -39,6 +46,7 @@ const Upload = () => {
     created_at,
     donated,
     photo,
+    imageUpload,
     coord,
     button_visible,
     endanger,
@@ -56,21 +64,72 @@ const Upload = () => {
 
 
   const init = () => {
-    setValues({...values, coord: ofCoord
-    })
+    setValues({ ...values, coord: ofCoord })
+
   }
 
   useEffect(() => {
     init()
   }, [])
 
+
+
   const handleChange = key => event => {
-    const value = key === 'photos' ? event.target.files[0] : event.target.value
+    const value = event.target.value
     setValues({
       ...values,
       [key]: value
     })
   }
+
+  // for file upload and consume your ai here
+  const onFileChange = (event) => {
+    // capture file into state
+    setFileSelected(event.target.files[0]);
+    setValues({ ...values, imageUpload: `https://${storageAccountName}.blob.core.windows.net/all/${event.target.files[0].name}` });
+
+  };
+
+  const onFileUpload = async () => {
+
+    const blobsInContainer = await uploadFileToBlob(fileSelected);
+
+  };
+
+  const toPredictWithUrl = async () => {
+
+    const predictedData = await predictYourImage(photo);
+    console.log("predictedData" ,predictedData);
+    if (predictedData && predictedData.probability > 0.95) {
+      window.confetti.start(5000)
+      setValues({
+        ...values,
+        attended_to: true
+      })
+    }
+    return predictedData
+  };
+
+  const toPredictWithFile = async () => {
+
+    const predictedData = await predictYourImageTwo(fileSelected);
+    console.log("predictedData" ,predictedData);
+    if (predictedData && predictedData.probability > 0.95) {
+      // Doing this make a good container name
+      let goodName = predictedData.tagName.replace(/[.*+?^${}()|[\]\\]/g, '').toLowerCase()
+      goodName = goodName.replace(/\s/g, '-')
+      // A little Celebration
+      window.confetti.start(5000)
+      // This will notify backend admin to watch for this
+      setValues({
+        ...values,
+        attended_to: true
+      })
+
+      await uploadFileToBlob(fileSelected, goodName)
+    }
+    return predictedData
+  };
 
   // get location
   const getLocation = () => {
@@ -109,17 +168,29 @@ const Upload = () => {
       case error.UNKNOWN_ERROR:
         alert("An unknown error occurred.")
         break;
+      default:
+        alert("Something went terribly wrong!");
     }
   }
   // get location ends
 
+
+
   // This runs on submit
   const clickSumbit = (event) => {
     setValues({...values, error: '', loading: true})
+
     event.preventDefault();
 
-    axios.post('/.netlify/functions/addData', values)
+    onFileUpload().then( data => {
+      console.log("File was uploaded");
+    })
+    .then(
+      axios.post('/.netlify/functions/addData', values)
+    )
     .then(data => {
+      window.confetti.start(5000)
+
       setValues({
         ...values,
         name: '',
@@ -130,14 +201,23 @@ const Upload = () => {
         createdProduct: name
       })
     })
-    .catch(error => setValues({...values, error: error})
-    )
+    .catch(error => {
+      console.log("error", error)
+      setValues({
+        ...values,
+        name: '',
+        description: '',
+        photo: '',
+        error: "Something went wrong!",
+        loading: false,
+      })
+    })
 
   };
 
   const productForm = () => {
   return (
-    <form onSubmit={ clickSumbit } className="mb-3 placeholderInput" data-netlify="true">
+    <form onSubmit={ clickSumbit } className="mb-3 pl-2 pr-2 placeholderInput" data-netlify="true">
 
       <div className="form-group placeholderInput">
         <label className="text-muted">Name</label>
@@ -149,15 +229,28 @@ const Upload = () => {
       </div>
       <div className="form-group">
         <label className="text-muted">Description</label>
-        <textarea type="text" className="form-control" value={description} onChange={ handleChange('description') } placeholder = "     **This white tiger was found at...**"/>
+        <textarea type="text" className="form-control" value={description} onChange={ handleChange('description') } placeholder = "     **This white tiger is a native of...**"/>
       </div>
       <div className="form-group">
         <label className="text-muted">Found at</label>
         <input type="text" className="form-control" value={location} onChange={ handleChange('location') } placeholder = "       **10 Downing St, Westminster, London..."/>
       </div>
       <div className="form-group">
-        <label className="text-muted">Add an image link</label>
-        <input type="text" className="form-control" value={photo} onChange={ handleChange('photo') } placeholder = "       **Link Format: 'https://abcxyz.jpg' Can upload at <postimages.org or imgur> **"/>
+        <div className="new border border-primary pt-2 pl-2 pr-2 pb-2">
+          <label className="text-muted">Add an image link</label>
+          <input type="text" className="form-control" value={photo} onChange={ handleChange('photo') } placeholder = "       **Link Format: 'https://abcxyz.jpg' Can upload at <postimages.org or imgur> **"/>
+          {/* <button type="button" onClick={ () => toPredictWithUrl(photo) } className="btn btn-lg btn-outline-danger mt-2 ml-2">Send to AI</button> */}
+          <MyButton whenClicked = { () => toPredictWithUrl(photo) } />
+        </div>
+      </div>
+      <div><h3>OR</h3></div>
+      <div className="form-group">
+        <div className="new border border-info pt-2 pl-2 pr-2 pb-2">
+          <label className="text-muted">Upload image</label>
+          <input type="file" className="form-control" onChange= { onFileChange } />
+          {/* <button type="button" onClick={ () => toPredictWithFile(fileSelected) } className="btn btn-lg btn-outline-info mt-2 ml-2">Send to AI</button> */}
+          <MyButton whenClicked = { () => toPredictWithFile(fileSelected) } changecolor = { true } />
+        </div>
       </div>
       <div className="form-group">
         <label className="text-muted">Class</label>
@@ -198,14 +291,14 @@ const Upload = () => {
       </div>
       <br/> <hr/>
 
-      <button className="btn btn-outline-primary">Discover</button>
+      <button type="submit" className="btn btn-outline-primary">Save ➕</button>
     </form>
   )
 }
 
 const showError = () => (
     <div className="alert alert-danger" style={{ display: error ? "" : "none" }}>
-      { error }
+      <h2> { error } </h2>
     </div>
 )
 
@@ -234,7 +327,7 @@ const showLoading = () => (
           { showLoading() }
           { productForm() }
           <br/><hr/>
-          {/* { JSON.stringify(values) } */}
+
         </div>
       </div>
     </Layout>

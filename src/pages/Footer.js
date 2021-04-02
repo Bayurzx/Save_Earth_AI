@@ -1,6 +1,6 @@
 import '../extra/css/style.css'
 import '../extra/css/font-awesome.min.css'
-import hackImage from '../extra/images/4.jpg';
+import hackImage from '../extra/images/48.png';
 
 // import '../extra/css/parallax.css'
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="row">
               <div className="col-sm-8">
                 <div className="columnbottom-margin recent-work-wrap">
-                  <h4 className="widget-title">DataStax <span>Hackathon</span></h4>
+                  <h4 className="widget-title">Mirosoft Azure AI <span>Hackathon</span></h4>
                   <div className="latest-pfolio">
                     <div className="col-xs-12 no-space">
                       <div className="portfolio-wrapper">
@@ -27,8 +27,8 @@ const Footer = () => {
                 <div className="columnbottom-margin contact-info-wrap">
                   <h4 className="widget-title">Contact <span>Details</span></h4>
                   <ul className="contact-info list-unstyled">
-                    <a href="https://github.com/Bayurzx/save-earth"><i className="fa fa-home mr-3 mb-3" /> Github Link</a>
-                    <li><i className="fa fa-phone" /> <a href="tel:000-0000-0000">+234 816 603 9145</a></li>
+                    <li><i className="fa fa-github" /> <a href="https://github.com/Bayurzx/Save_Earth_AI"> Github Link</a></li>
+                    <li><i className="fa fa-phone" /> <a href="tel:+234-816-603-9145">+234 816 603 9145</a></li>
                     <li><i className="fa fa-envelope" /> <a href="mailto:bayurzx@gmail.com">bayurzx@gmail.com</a></li>
                   </ul>{/* end contact-info  */}
 
@@ -58,13 +58,13 @@ const Footer = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="" className="social-icon social-icon-small social-icon-pinterest">
-                        <i className="fa fa-quora" />
-                        <i className="fa fa-quora" />
+                      <a href="https://wa.link/mvursl" className="social-icon social-icon-small social-icon-dribbble">
+                        <i className="fa fa-whatsapp" />
+                        <i className="fa fa-whatsapp" />
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="social-icon social-icon-small social-icon-linkedin">
+                      <a href="https://www.linkedin.com/in/adebayo-omolumo-2b1ba078/" className="social-icon social-icon-small social-icon-linkedin">
                         <i className="fa fa-linkedin" />
                         <i className="fa fa-linkedin" />
                       </a>

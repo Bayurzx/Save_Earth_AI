@@ -1,11 +1,10 @@
 const { createClient } = require("@astrajs/collections")
 const cassandra = require('cassandra-driver');
-const Point = cassandra.geometry.Point;
 
 // creates unique universal ID with respect to time/ Date()
 const myuuid = JSON.stringify(cassandra.types.TimeUuid.now());
 // define your collection here it automatically creates one if you dont have yet
-const collection = 'wildlife'
+const collection = 'trainingdata'
 
 
 exports.handler = async function (event, context, callback) {
@@ -24,19 +23,13 @@ exports.handler = async function (event, context, callback) {
 
     const data = {
       id: myuuid,
-      name: body.name,
-      caption: body.caption,
+      tag: body.tag,
       description: body.description,
       username: body.username,
       email: body.email,
       ofClass: body.ofClass,
-      location: body.location,
-      attended_to: body.attended_to,
-      created_at: body.created_at,
+      created_at: new Date(),
       images: body.photo,
-      imageUpload: body.imageUpload,
-      coord: body.coord,
-      button_visible: body.button_visible,
       endanger: body.endanger,
     }
 

@@ -7,6 +7,7 @@ import Signin from './auth/Signin';
 import Detail from './pages/Detail';
 import Upload from './pages/Upload';
 import Saviour from './pages/Saviour';
+import Trainer from './pages/Trainer';
 import Dashboard from './auth/UserDashboard';
 import Profile from './auth/Profile';
 import AdminDashboard from './auth/AdminDashboard';
@@ -28,6 +29,7 @@ const Routes = () => {
             <PrivateRoute path="/profile/:userId" exact component={Profile} />
             <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
             <AdminRoute path="/admin/manage" exact component={Manage} />
+            <AdminRoute path="/request/training" exact component={Trainer} />
 
           </Switch>
         </BrowserRouter>

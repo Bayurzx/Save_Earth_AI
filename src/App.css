@@ -80,7 +80,7 @@
  */
 
 .jumbotron {
-    height: 200px;
+    height: auto;
     color: #fff;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
@@ -186,4 +186,49 @@ p.moment {
   padding: 25px 0px 50px 0px;
 }
 
-/* footer */
+/* buttonloader */
+.buttonloader {
+  background-color: #ffffff; /* White */
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.buttonloader:disabled {
+  opacity: 0.5;
+}
+
+/* Starts typing */
+.typwriter div {
+  display: flex;
+  justify-content: center;
+}
+
+
+.typewriter {
+  color: #000;
+  font-family: 'Open Sans', sans-serif;
+  overflow: inherit; /* Ensures the content is not revealed until the animation */
+  white-space: normal; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .10em; /* Adjust as needed */
+  animation:
+  typing 3.5s steps(30, end),
+  blink-caret .5s step-end infinite;
+
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: transparent }
+}

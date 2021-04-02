@@ -5,6 +5,9 @@
   "dependencies": {
     "@astrajs/collections": "0.0.9",
     "@astrajs/rest": "0.0.9",
+    "@azure/cognitiveservices-customvision-prediction": "^5.1.2",
+    "@azure/cognitiveservices-customvision-training": "^5.2.0",
+    "@azure/storage-blob": "^12.5.0",
     "@octokit/core": "^3.2.4",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
@@ -20,6 +23,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
+    "react-script-tag": "^1.1.2",
     "react-scripts": "4.0.1",
     "rollup": "^2.35.1",
     "web-vitals": "^0.2.4"
@@ -41,7 +45,10 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "last 1 Edge version",
+      "last 1 Chrome version",
+      "last 1 Firefox version"
     ],
     "development": [
       "last 1 chrome version",

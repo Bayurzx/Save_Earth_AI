@@ -9,9 +9,8 @@ const axios = require('axios');
 const Dashboard = () => {
 
   const [history, setHistory] = useState([]);
-  const { user: { _id, name, email, role }, token } = isAuthenticated();
+  const { user: { _id, name, email, role } } = isAuthenticated();
 
-  let res;
   const init = (email) => {
     axios.post('/.netlify/functions/findUserPosts', email)
     .then(response => {

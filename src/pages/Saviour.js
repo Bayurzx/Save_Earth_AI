@@ -15,6 +15,7 @@ const Saviour = () => {
 
   useEffect(() => {
     loadProducts()
+    window.confetti.start(10000)
   }, [])
 
   return (

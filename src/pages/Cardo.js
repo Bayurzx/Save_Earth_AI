@@ -1,10 +1,8 @@
-import React, {useState} from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import React from 'react';
 import ShowImage from './ShowImage';
 import moment from 'moment';
 
 const Card = ({detail}) => {
-
   return (
     <div className="mb-1">
       <div className="card">
@@ -13,7 +11,7 @@ const Card = ({detail}) => {
           <em className="ml-3">{detail.caption}</em>
         </div>
         <div className="card-body faded">
-          <ShowImage url={detail.images} />
+          <ShowImage url={detail.images || detail.imageUpload} />
           <p><strong>Address:</strong> {detail.location}</p>
         </div>
       </div>
