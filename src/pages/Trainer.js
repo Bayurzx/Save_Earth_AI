@@ -193,7 +193,6 @@ const showLoading = () => (
           { showLoading() }
           { productForm() }
           <br/><hr/>
-          { JSON.stringify(values) }
         </div>
       </div>
     </Layout>

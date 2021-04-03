@@ -49,7 +49,7 @@ const Home = () => {
   }, [])
 
   return (
-    <Layout title="Save Earth with AI" description="Discover rare or nearly-extinct Wildlife or Plants with the help of AI for the world to see." className="container-fluid">
+    <Layout title="Save Earth with Azure AI" description="Discover rare or nearly-extinct Wildlife or Plants with the help of AI for the world to see." className="container-fluid">
       <h2 className="mb-4">Animals</h2>
       <div className="row">
         { animal.map((d, i) => (
