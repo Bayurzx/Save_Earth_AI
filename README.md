@@ -34,6 +34,7 @@ I wanted to create a project that could create awareness on rare, unique, endang
 
 # How we built it???
 Save_Earth_AI Architecture 👇
+
 ![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/saveearth%20architecture1.png)
 - A user fills the form at the upload page, includes an image but first, sends the image data to Custom Vision AI
 - If the image is detected by AI, It is prioritized and sent to a blob container
@@ -46,7 +47,7 @@ Save_Earth_AI Architecture 👇
     - Using bad data
     - Overfitting the model
     - Using unbalanced data
-
+---
 
 ## Stack Highlights 🥪🥪🥪
 - Azure Cognitive Services' **Custom Vision** : Custom Vision makes it easy for anyone to train and analyze tagged `Image Datasets` without much prior experience with an already provided machine learning algorithm without, the complexity of spinning up VMs or GPU clusters. You can then communicate with the Custom Vision API to run image detection or classification quickly from anywhere around the world with the aid of Azure Cloud edge networks!
@@ -89,6 +90,17 @@ regular user password: P@$$word1234
 ![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/customvision.jpg)
 
 - For more info on custom vision click 👉 [link](https://docs.microsoft.com/en-us/learn/modules/classify-images-with-custom-vision-service/) 👈
+---
+
+### Setup Azure Storage Account
+- Follow this 👉 [link](https://portal.azure.com/#create/Microsoft.StorageAccount) 👈 to create an Azure Storage Account
+- Fill in the details as shown below
+
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/azure_storage.jpg)
+
+For more info click [here](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-nodejs)
+
+
 ---
 ### Setting up DB
 - You can either use [CosmosDB](https://docs.microsoft.com/en-us/learn/modules/create-cosmos-db-for-scale/), [DataStax Astra](https://github.com/DataStax-Examples/sample-app-template) or  [Azure SQL Database](https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/)
