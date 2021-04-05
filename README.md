@@ -17,7 +17,18 @@ I wanted to create a project that could create awareness on rare, unique, endang
 # What It Does???
 - It allows any one on earth or beyond 👽 `😉` To feature their discovery! And with the help of AI, The app can help detect high priority images, add it to a special collection which the admin can easily utilize.
 - It also creates a community for we, the environmental/nature freaks, NGOs, scientists, researchers, explorers, adventurers of the world who care about nature...  etc... To come together and feature, discuss something weird you saw from some where on earth and save it. Hence, Save-Earth get it... 😁😊😓😓
-- It allows any one to send image datasets to custom vision for training.
+- The app, with the help of the Custom Vision Prediction API was able to detect and then classify images returning a probability percent and give responses based on the probability.
+
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/AI_test.gif)
+
+- The app was able to automatically store high priority images that were detected by the Custom Vision AI by creating and saving it into Blob Containers.
+
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/auto_containers.jpg)
+
+- It also allowed people, given admin access, to tag and send image datasets for training.
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/image_dataset1.jpg)
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/image%20dataset2.jpg)
+
 ---
 
 # What Do You Do???
