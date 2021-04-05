@@ -2,6 +2,10 @@
 
 # dependencies
 /node_modules
+/build/process.js
+server.js
+process.js
+powerpoint.txt
 
 .env
 .env.development

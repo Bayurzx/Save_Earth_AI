@@ -1,5 +1,5 @@
 <!--- STARTEXCLUDE --->
-# Save Earth Azure AI
+# Save Earth with Azure AI
 
 Create entries of newly discovered, rare, or near-extinct life discoveries on earth with the help of `AI` 🤖 for the world to see!
 
@@ -9,65 +9,70 @@ Create entries of newly discovered, rare, or near-extinct life discoveries on ea
 ![image](https://raw.githubusercontent.com/Bayurzx/save-earth/footer/screenshots/footer2.jpg)
 
 
-## Stack Highlights 🥪🥪🥪
-### This web app makes use of :
-- Reactjs : Render components with data from your apis, dbs and make them dynamic and responsive to user input.
-- Netlify : Are you new to Netlify, so was I when I started this project. It's easy to learn. Provides a powerful serverless platform that's easy to scale
-- Astra DataStax : Also my first time using Astra, You can easily perform CRUD operations with Astra Collections. Astra's edge is at their low latency and high-write operations suitable for BigData ops.
+# Why I Did It (Inspiration) ???
+## `For the joy of a new discovery!!!`
+*What's a better way to describe the beauty of life on earth than with a simple picture?*
+I wanted to create a project that could create awareness on rare, unique, endangered plants and animals. It's vital that people understand the impact we have on the natural world around us with respect to extinction of other species.
 
-## You Should Know That...
-*while this was created to be serverless with Netlify and 96% of operations are carried out using Netlify and Astra it does use a tiny weenie bit of backend for Authentication and only authentication(signup and signin) why?... For Security..., because it was easier... who knows! I would need you to get waaay off my back, it's my app! Now let's get started.*
-
-# Why???
-This app was designed for the explorers, adventurers of the world. It is a way for you to feature something weird you saw from any where on earth and save it. Hence, Save-Earth get it... 😁☺😓😓
-
-# How???
-Give it a name, add a caption, give some description, tell us where you saw it. Take a pic, send us the link, *just the link please*.
-When adding a location have in mind that the app uses `Google Geocoder API` So use a language Google map will understand. It also uses `Google Javascript Map API` for exact coordinates all well integrated into the React App, so, don't forget to click the coordinate button!
-
-# Who??
-Like I said earlier, It's for we, the environmental freaks, who care about nature... NGOs, scientist, researchers, explorers etc... that care about what's on earth, etc...
-
+# What It Does???
+- It allows any one on earth or beyond 👽 `😉` To feature their discovery! And with the help of AI, The app can help detect high priority images, add it to a special collection which the admin can easily utilize.
+- It also creates a community for we, the environmental/nature freaks, NGOs, scientists, researchers, explorers, adventurers of the world who care about nature...  etc... To come together and feature, discuss something weird you saw from some where on earth and save it. Hence, Save-Earth get it... 😁😊😓😓
 ---
-# Checkout the site here 👉 [saveearth](https://saveearth.xyz/) 👈
+
+# What Do You Do???
+## Checkout the site here 👉 [saveearth](https://saveearth.xyz/) 👈
+### (Might need to refresh sometimes; Server closes on the 14th April. [Contact me](mailto:bayurzx@gmail.com) to create/ open server) 
 ---
-- First, signup and then signin (ensure your password has the following: alphanumeric, symbol and one capital letter)
+- First, signup and then signin, ensure your password has the following: alphanumeric, symbol and one capital letter. e.g P@$$word1234
 - Upload link only show after signin
-- Feel free to explore and create your own discovery
+- Give it a name, add a caption, give some description, tell us where you saw it. Take a pic and upload it or send us the link. Upload it to AI 🤖 to see if it's on our radar. Then add a location. Have in mind that the app uses `Google Geocoder API` So use a language Google map will understand. It also uses `Google Javascript Map API` for exact coordinates so don't forget to click the coordinate button!.
 - The donation is in a sandbox for now (braintree) feel free to use this fake card detail for testing:
     4111 1111 1111 1111
     12/22
-
-# Setup
-
-## Setup Astra
 ---
-### First of all I would like to thank astra for giving me 5GB free, no credit card required `Wondering the catch?` Me too... tell if you find one.
+
+# How we built it???
+## Stack Highlights 🥪🥪🥪
+- Azure Cognitive Services' **Custom Vision** : Custom Vision makes it easy for anyone to train and analyze tagged `Image Datasets` without much prior experience with an already provided machine learning algorithm without, the complexity of spinning up VMs or GPU clusters. You can then communicate with the Custom Vision API to run image detection or classification quickly from anywhere around the world with the aid of Azure Cloud edge networks!
+- Azure Container Storage: This enables storing blob files such as images for backups, archiving, retrieval and analysis on Azure-hosted service such as Custom Vision.
 ---
-### DataStax Astra
-1. Create a [DataStax Astra account](https://astra.datastax.com/register) if you don't
-already have one:
+### This web app also made use of :
+`| Languages  | Frameworks | Cloud services | Databases        | APIs        | Platform    |
+ | ---------- | ---------- | -------------- | ---------------- | ----------- | ----------- |
+| JS, HTML,CSS | Reactjs, expressjs  | Azure(VM, VNet etc.) | DataStax Astra(Frontend), MongoDB(Backend)     | Google Geocoder API, Google JavaScript Map API   |  Netlify   |
+`
+---
+## You Should Know That...
+*Microservices do not have to be a Nightmare, you can decide to use whatever stack that favors you. I decided on the stacks and services to use based on preferences (Nahh, they were probably already paid for or free 😂).  Other than your core services: Azure Custom Vision and Containers, Feel free to use whatever stack that burst your bubble 😊 .*
+
+## Here are examples of trained images the AI will detect
+Alpaca, American Crow, American Goldfinch (Female), American Goldfinch (Male), American Robin (Adult), American Robin (Juvenile), Blue Jay, Common Grackle, `Hedgehog`, House Sparrow (Female), House Sparrow (Male), House Wren, Mourning Dove, Northern Cardinal (Adult Male), Northern Cardinal (Female), `Parrot`, `Red Panda`, Red-tailed Hawk (Dark morph), Red-tailed Hawk (Light morph immature), `Sunflower`, Tufted Titmouse, `White Tiger`.
+
+## Here is the `Admin Login` and `regular user login` to test out creation of image Datasets
+user: eren_yeager@gmail.com
+password: P@$$word1234
+
+regular user: superman@gmail.com
+regular user password: P@$$word1234
+
+---
+## Setting UP!.
+
+### Setup Azure Custom Vision
+- Follow this 👉 [link](https://portal.azure.com/#create/Microsoft.CognitiveServicesCustomVision) 👈 to create a custom vision resource
+- Fill in the details as shown below
 ![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-register-basic-auth.png)
+- You will be directed to your Custom Vision UI. Remember to collect and keep your keys and endpoints url safely.
+- For more info on custom vision click 👉 [link](https://docs.microsoft.com/en-us/learn/modules/classify-images-with-custom-vision-service/) 👈
 
-2. On the home page. Locate the button **`Add Database`**
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-dashboard.png)
+### Setting up DB
+- You can either use [CosmosDB](https://docs.microsoft.com/en-us/learn/modules/create-cosmos-db-for-scale/), DataStax Astra [DataStax Astra](https://github.com/DataStax-Examples/sample-app-template) or  [Azure SQL Database](https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/)
 
-3. Pick **free plan** and a **region** close to you, click configure.
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-create-db-1-top.png)
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-create-db-1-bottom.png)
+### Setting Up Geocoder APIs
+- You can easily get the keys for the Google Geocoder API and Google Javascript Map API [here](https://console.cloud.google.com/marketplace)
 
-4. Define a **database name**, **keyspace name** and **credentials** (Take note of the DB Password)
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-create-db-2.png)
-
-5. Your Astra DB will be ready when the status will change from *`Pending`* to **`Active`** 💥💥💥
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-db-active.png)
-
-6. After your database is provisioned, head to the `Connect` screen and copy your connection
-information (we'll need this later!):
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-connect.png)
-
-### After having your DB set, you can use this as a template on github, click the <use as template> button  👆 or...
 ---
+
 Clone to your local machine...
 `git clone <put copied git link here>`
 
@@ -80,5 +85,5 @@ While you can run the app with `npm start` I would advise using `npx netlify dev
 
 Happy coding!
 
-*Make sure to get the backend for authentication at 👉* [save-earth-BE](https://github.com/Bayurzx/save-earth-BE)
-Note that after signup, you can switch the role from regular user => `user: 0` to Administrator => `admin:1` at the backend
+*Make sure to get the backend for authentication at 👉* [save-earth-BE](https://github.com/Bayurzx/Save_Earth_AI_BE)
+Note that after signup, you can switch the role from regular user => `user: 0` to Administrator => `admin:1` at the database backend
