@@ -22,7 +22,7 @@ I wanted to create a project that could create awareness on rare, unique, endang
 
 # What Do You Do???
 ## Checkout the site here 👉 [SaveearthAI](https://saveearth.xyz/) 👈
-### (Might need to refresh sometimes; Server closes on the 14th April. [Contact me](mailto:bayurzx@gmail.com) to create/ open server)
+### (Might need to be refreshed sometimes; Server closes on the 14th April. [Contact me](mailto:bayurzx@gmail.com) to create/ open server)
 ---
 - First, signup and then signin, ensure your password has the following: alphanumeric, symbol and one capital letter. e.g P@$$word1234
 - Upload link shows only show after signin
@@ -33,7 +33,20 @@ I wanted to create a project that could create awareness on rare, unique, endang
 ---
 
 # How we built it???
+Save_Earth_AI Architecture 👇
 ![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/saveearth%20architecture1.png)
+- A user fills the form at the upload page, includes an image but first, sends the image data to Custom Vision AI
+- If the image is detected by AI, It is prioritized and sent to a blob container
+- User receives response and can continue with uploading data
+- The data is then stored in the database (Blobs go the Blob container; documents go to NoSQL)
+---
+- Similar step involves creation of Image Datasets.
+- Anyone can create dataset (provided they have admin access) but only Root Administrator can train the customvision AI.
+- This was put to in place to prevent common mistakes like:
+    - Using bad data
+    - Overfitting the model
+    - Using unbalanced data
+
 
 ## Stack Highlights 🥪🥪🥪
 - Azure Cognitive Services' **Custom Vision** : Custom Vision makes it easy for anyone to train and analyze tagged `Image Datasets` without much prior experience with an already provided machine learning algorithm without, the complexity of spinning up VMs or GPU clusters. You can then communicate with the Custom Vision API to run image detection or classification quickly from anywhere around the world with the aid of Azure Cloud edge networks!
@@ -55,8 +68,8 @@ Alpaca, American Crow, American Goldfinch (Female), American Goldfinch (Male), A
 
 ---
 ## Here is the `Admin Login` and `regular user login` to test out creation of image Datasets
-user: eren_yeager@gmail.com
-password: P@$$word1234
+Admin user: eren_yeager@gmail.com
+Admin password: P@$$word1234
 
 regular user: superman@gmail.com
 regular user password: P@$$word1234
@@ -85,6 +98,7 @@ regular user password: P@$$word1234
 - You can easily get the keys for the Google Geocoder API and Google Javascript Map API [here](https://console.cloud.google.com/marketplace)
 
 ---
+# Final Setup
 
 Clone to your local machine...
 `git clone <put copied git link here>`
