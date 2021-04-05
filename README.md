@@ -17,6 +17,7 @@ I wanted to create a project that could create awareness on rare, unique, endang
 # What It Does???
 - It allows any one on earth or beyond 👽 `😉` To feature their discovery! And with the help of AI, The app can help detect high priority images, add it to a special collection which the admin can easily utilize.
 - It also creates a community for we, the environmental/nature freaks, NGOs, scientists, researchers, explorers, adventurers of the world who care about nature...  etc... To come together and feature, discuss something weird you saw from some where on earth and save it. Hence, Save-Earth get it... 😁😊😓😓
+- It allows any one to send image datasets to custom vision for training.
 ---
 
 # What Do You Do???
@@ -41,7 +42,7 @@ I wanted to create a project that could create awareness on rare, unique, endang
 ### This web app also made use of :
 | Languages  | Frameworks | Cloud services | Databases        | APIs        | Platform    |
  | ---------- | ---------- | -------------- | ---------------- | ----------- | ----------- |
-| JS, HTML,CSS | Reactjs, expressjs  | Azure(VM, VNet etc.) | DataStax Astra(Frontend), MongoDB(Backend)     | Google Geocoder API, Google JavaScript Map API   |  Netlify   |
+| JS, HTML,CSS | Reactjs  | Azure(VM, VNet etc.) | DataStax Astra(Frontend), MongoDB(Backend)     | Azure BlobClient API, Azure Custom Vision API, Google Geocoder API, Google JavaScript Map API   |  Netlify   |
 
 ---
 ## You Should Know That...
@@ -50,6 +51,9 @@ I wanted to create a project that could create awareness on rare, unique, endang
 ## Here are examples of trained images the AI will detect
 Alpaca, American Crow, American Goldfinch (Female), American Goldfinch (Male), American Robin (Adult), American Robin (Juvenile), Blue Jay, Common Grackle, `Hedgehog`, House Sparrow (Female), House Sparrow (Male), House Wren, Mourning Dove, Northern Cardinal (Adult Male), Northern Cardinal (Female), `Parrot`, `Red Panda`, Red-tailed Hawk (Dark morph), Red-tailed Hawk (Light morph immature), `Sunflower`, Tufted Titmouse, `White Tiger`.
 
+### So Feel free to use the any of these and check the AI response (*Surprise, surprise😉*)
+
+---
 ## Here is the `Admin Login` and `regular user login` to test out creation of image Datasets
 user: eren_yeager@gmail.com
 password: P@$$word1234
@@ -62,14 +66,19 @@ regular user password: P@$$word1234
 
 ### Setup Azure Custom Vision
 - Follow this 👉 [link](https://portal.azure.com/#create/Microsoft.CognitiveServicesCustomVision) 👈 to create a custom vision resource
-- Fill in the details as shown below
-![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/Custom%20Vision%20UI.jpg)
-- You will be directed to your Custom Vision UI. Remember to collect and keep your keys and endpoints url safely.
-![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/customvision.jpg)
-- For more info on custom vision click 👉 [link](https://docs.microsoft.com/en-us/learn/modules/classify-images-with-custom-vision-service/) 👈
 
+- Fill in the details as shown below
+
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/Custom%20Vision%20UI.jpg)
+
+- You will be directed to your Custom Vision UI. Remember to collect and keep your keys and endpoints url safely.
+
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/customvision.jpg)
+
+- For more info on custom vision click 👉 [link](https://docs.microsoft.com/en-us/learn/modules/classify-images-with-custom-vision-service/) 👈
+---
 ### Setting up DB
-- You can either use [CosmosDB](https://docs.microsoft.com/en-us/learn/modules/create-cosmos-db-for-scale/), || [DataStax Astra](https://github.com/DataStax-Examples/sample-app-template) or  [Azure SQL Database](https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/)
+- You can either use [CosmosDB](https://docs.microsoft.com/en-us/learn/modules/create-cosmos-db-for-scale/), [DataStax Astra](https://github.com/DataStax-Examples/sample-app-template) or  [Azure SQL Database](https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/)
 - Follow the links for more info on how to setup the respective DBs
 
 ### Setting Up Geocoder APIs
@@ -85,9 +94,9 @@ Install all dependencies in package.json
 
 While that is working, you should sort out your .env file, go to the .env.sample file you will get details on your environment variables
 
-While you can run the app with `npm start` I would advise using `npx netlify dev` to enable you utilize netlify-functions
+You should run using `npx netlify dev` to enable you utilize netlify-cli functions
 
 Happy coding!
 
-*Make sure to get the backend for authentication at 👉* [save-earth-BE](https://github.com/Bayurzx/Save_Earth_AI_BE)
+*Make sure to get the backend for authentication at 👉* [Save_Earth_AI_BE](https://github.com/Bayurzx/Save_Earth_AI_BE)
 Note that after signup, you can switch the role from regular user => `user: 0` to Administrator => `admin:1` at the database backend
