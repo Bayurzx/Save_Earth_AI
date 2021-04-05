@@ -21,10 +21,10 @@ I wanted to create a project that could create awareness on rare, unique, endang
 
 # What Do You Do???
 ## Checkout the site here 👉 [saveearth](https://saveearth.xyz/) 👈
-### (Might need to refresh sometimes; Server closes on the 14th April. [Contact me](mailto:bayurzx@gmail.com) to create/ open server) 
+### (Might need to refresh sometimes; Server closes on the 14th April. [Contact me](mailto:bayurzx@gmail.com) to create/ open server)
 ---
 - First, signup and then signin, ensure your password has the following: alphanumeric, symbol and one capital letter. e.g P@$$word1234
-- Upload link only show after signin
+- Upload link shows only show after signin
 - Give it a name, add a caption, give some description, tell us where you saw it. Take a pic and upload it or send us the link. Upload it to AI 🤖 to see if it's on our radar. Then add a location. Have in mind that the app uses `Google Geocoder API` So use a language Google map will understand. It also uses `Google Javascript Map API` for exact coordinates so don't forget to click the coordinate button!.
 - The donation is in a sandbox for now (braintree) feel free to use this fake card detail for testing:
     4111 1111 1111 1111
@@ -37,10 +37,10 @@ I wanted to create a project that could create awareness on rare, unique, endang
 - Azure Container Storage: This enables storing blob files such as images for backups, archiving, retrieval and analysis on Azure-hosted service such as Custom Vision.
 ---
 ### This web app also made use of :
-`| Languages  | Frameworks | Cloud services | Databases        | APIs        | Platform    |
+| Languages  | Frameworks | Cloud services | Databases        | APIs        | Platform    |
  | ---------- | ---------- | -------------- | ---------------- | ----------- | ----------- |
 | JS, HTML,CSS | Reactjs, expressjs  | Azure(VM, VNet etc.) | DataStax Astra(Frontend), MongoDB(Backend)     | Google Geocoder API, Google JavaScript Map API   |  Netlify   |
-`
+
 ---
 ## You Should Know That...
 *Microservices do not have to be a Nightmare, you can decide to use whatever stack that favors you. I decided on the stacks and services to use based on preferences (Nahh, they were probably already paid for or free 😂).  Other than your core services: Azure Custom Vision and Containers, Feel free to use whatever stack that burst your bubble 😊 .*
