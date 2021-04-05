@@ -4,9 +4,9 @@
 Create entries of newly discovered, rare, or near-extinct life discoveries on earth with the help of `AI` 🤖 for the world to see!
 
 <!---Add Image here --->
-![image](https://raw.githubusercontent.com/Bayurzx/save-earth/footer/screenshots/Home.jpg)
-![image](https://raw.githubusercontent.com/Bayurzx/save-earth/footer/screenshots/Details.jpg)
-![image](https://raw.githubusercontent.com/Bayurzx/save-earth/footer/screenshots/footer2.jpg)
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/Home.jpg)
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/AI_test.gif)
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/upload.jpg)
 
 
 # Why I Did It (Inspiration) ???
@@ -32,6 +32,8 @@ I wanted to create a project that could create awareness on rare, unique, endang
 ---
 
 # How we built it???
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/saveearth%20architecture1.png)
+
 ## Stack Highlights 🥪🥪🥪
 - Azure Cognitive Services' **Custom Vision** : Custom Vision makes it easy for anyone to train and analyze tagged `Image Datasets` without much prior experience with an already provided machine learning algorithm without, the complexity of spinning up VMs or GPU clusters. You can then communicate with the Custom Vision API to run image detection or classification quickly from anywhere around the world with the aid of Azure Cloud edge networks!
 - Azure Container Storage: This enables storing blob files such as images for backups, archiving, retrieval and analysis on Azure-hosted service such as Custom Vision.
