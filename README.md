@@ -20,7 +20,7 @@ I wanted to create a project that could create awareness on rare, unique, endang
 ---
 
 # What Do You Do???
-## Checkout the site here 👉 [saveearth](https://saveearth.xyz/) 👈
+## Checkout the site here 👉 [SaveearthAI](https://saveearth.xyz/) 👈
 ### (Might need to refresh sometimes; Server closes on the 14th April. [Contact me](mailto:bayurzx@gmail.com) to create/ open server)
 ---
 - First, signup and then signin, ensure your password has the following: alphanumeric, symbol and one capital letter. e.g P@$$word1234
@@ -63,12 +63,14 @@ regular user password: P@$$word1234
 ### Setup Azure Custom Vision
 - Follow this 👉 [link](https://portal.azure.com/#create/Microsoft.CognitiveServicesCustomVision) 👈 to create a custom vision resource
 - Fill in the details as shown below
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-register-basic-auth.png)
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/Custom%20Vision%20UI.jpg)
 - You will be directed to your Custom Vision UI. Remember to collect and keep your keys and endpoints url safely.
+![image](https://raw.githubusercontent.com/Bayurzx/Save_Earth_AI/master/screenshots/customvision.jpg)
 - For more info on custom vision click 👉 [link](https://docs.microsoft.com/en-us/learn/modules/classify-images-with-custom-vision-service/) 👈
 
 ### Setting up DB
-- You can either use [CosmosDB](https://docs.microsoft.com/en-us/learn/modules/create-cosmos-db-for-scale/), DataStax Astra [DataStax Astra](https://github.com/DataStax-Examples/sample-app-template) or  [Azure SQL Database](https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/)
+- You can either use [CosmosDB](https://docs.microsoft.com/en-us/learn/modules/create-cosmos-db-for-scale/), || [DataStax Astra](https://github.com/DataStax-Examples/sample-app-template) or  [Azure SQL Database](https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/)
+- Follow the links for more info on how to setup the respective DBs
 
 ### Setting Up Geocoder APIs
 - You can easily get the keys for the Google Geocoder API and Google Javascript Map API [here](https://console.cloud.google.com/marketplace)
